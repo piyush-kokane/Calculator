@@ -83,9 +83,9 @@
                 android:id="@+id/Btn_AC"
                 style="@style/Button_3"
                 android:text="AC"
+                tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/Btn_Brac"
-                />
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Brac" />
 
             <Button
                 android:id="@+id/Btn_Brac"
@@ -99,6 +99,7 @@
                 android:id="@+id/Btn_Mod"
                 style="@style/Button_2"
                 android:text="%"
+                tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_Brac"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Div" />
 
@@ -106,6 +107,7 @@
                 android:id="@+id/Btn_Div"
                 style="@style/Button_2"
                 android:text="/"
+                tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_Mod"
                 app:layout_constraintEnd_toEndOf="parent" />
 
