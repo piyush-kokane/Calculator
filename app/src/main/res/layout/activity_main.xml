@@ -70,7 +70,6 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -113,212 +112,157 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_height="wrap_content" >
 
             <Button
                 android:id="@+id/Btn_7"
                 style="@style/Button_1"
-                android:text="7" />
+                android:text="7"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_8" />
 
             <Button
                 android:id="@+id/Btn_8"
                 style="@style/Button_1"
-                android:text="8" />
+                android:text="8"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_7"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_9" />
 
             <Button
                 android:id="@+id/Btn_9"
                 style="@style/Button_1"
-                android:text="9" />
+                android:text="9"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_8"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Mul" />
 
             <Button
                 android:id="@+id/Btn_Mul"
                 style="@style/Button_2"
-                android:text="X" />
+                android:text="X"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_9"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_height="wrap_content" >
 
             <Button
                 android:id="@+id/Btn_4"
                 style="@style/Button_1"
-                android:text="4" />
+                android:text="4"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_5" />
 
             <Button
                 android:id="@+id/Btn_5"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="5"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_4"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_6" />
 
             <Button
                 android:id="@+id/Btn_6"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="6"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_5"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Sub" />
 
             <Button
                 android:id="@+id/Btn_Sub"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/purple"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_2"
                 android:text="-"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_6"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_height="wrap_content" >
 
             <Button
                 android:id="@+id/Btn_1"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="1"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_2" />
 
             <Button
                 android:id="@+id/Btn_2"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="2"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_1"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_3" />
 
             <Button
                 android:id="@+id/Btn_3"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="3"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_2"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Add" />
 
             <Button
                 android:id="@+id/Btn_Add"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/purple"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_2"
                 android:text="+"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_3"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/Btn_0"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
-                android:text="0"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+            android:layout_height="wrap_content" >
 
             <Button
                 android:id="@+id/Btn_Dot"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="."
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_0" />
+
+            <Button
+                android:id="@+id/Btn_0"
+                style="@style/Button_1"
+                android:text="0"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Dot"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_C" />
 
             <Button
                 android:id="@+id/Btn_C"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/lightGrey"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_1"
                 android:text="C"
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_0"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Eq" />
 
             <Button
                 android:id="@+id/Btn_Eq"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="12px"
-                android:backgroundTint="@color/purple"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:singleLine="true"
+                style="@style/Button_2"
                 android:text="="
-                android:textColor="@color/black"
-                android:textSize="42sp"
-                app:cornerRadius="100dp" />
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_C"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
