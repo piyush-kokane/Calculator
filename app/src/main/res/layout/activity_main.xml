@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:paddingVertical="42px"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,7 +91,7 @@
                 android:id="@+id/Btn_Brac"
                 style="@style/Button_2"
                 android:text="( )"
-                android:textSize="32sp"
+                tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_AC"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Mod" />
 
