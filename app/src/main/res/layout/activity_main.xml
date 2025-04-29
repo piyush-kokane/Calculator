@@ -89,7 +89,7 @@
             <Button
                 android:id="@+id/Btn_Brac"
                 style="@style/Button_2"
-                android:text="( )"
+                android:text="（ ）"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_AC"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Mod" />

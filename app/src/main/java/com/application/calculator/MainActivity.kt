@@ -34,6 +34,16 @@ class MainActivity : AppCompatActivity() {
         val button8: Button = findViewById(R.id.Btn_8)
         val button9: Button = findViewById(R.id.Btn_9)
 
+        // Connect operator buttons
+        val buttonAdd: Button = findViewById(R.id.Btn_Add)
+        val buttonSub: Button = findViewById(R.id.Btn_Sub)
+        val buttonMul: Button = findViewById(R.id.Btn_Mul)
+        val buttonDiv: Button = findViewById(R.id.Btn_Div)
+        val buttonMod: Button = findViewById(R.id.Btn_Mod)
+
+        val buttonEq: Button = findViewById(R.id.Btn_Eq)
+
+
         button0.setOnClickListener { appendNumber("0") }
         button1.setOnClickListener { appendNumber("1") }
         button2.setOnClickListener { appendNumber("2") }
@@ -44,6 +54,13 @@ class MainActivity : AppCompatActivity() {
         button7.setOnClickListener { appendNumber("7") }
         button8.setOnClickListener { appendNumber("8") }
         button9.setOnClickListener { appendNumber("9") }
+
+        buttonAdd.setOnClickListener {  }
+        buttonSub.setOnClickListener {  }
+        buttonMul.setOnClickListener {  }
+        buttonDiv.setOnClickListener {  }
+        buttonMod.setOnClickListener {  }
+
 
     }
 
