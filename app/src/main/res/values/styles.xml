@@ -6,6 +6,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="layout_constraintWidth_max">150dp</item>
         <item name="layout_constraintHeight_max">150dp</item>
+        <item name="layout_constraintDimensionRatio">1:1</item>
 
         <!-- Button common constraints -->
         <item name="layout_constraintTop_toTopOf">parent</item>
