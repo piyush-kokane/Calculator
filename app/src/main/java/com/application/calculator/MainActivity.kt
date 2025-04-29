@@ -3,24 +3,29 @@ package com.application.calculator
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var Solution: TextView
-    private lateinit var Result: TextView
-    private var currentInput: String = ""
+    private lateinit var Solution_txt: TextView
+    private lateinit var Result_txt: TextView
+    private var Solution: String = ""
+    private var Result: Double  = 0.0
+
+    private var Add: Boolean  = false
+    private var Sub: Boolean  = false
+    private var Mul: Boolean  = false
+    private var Div: Boolean  = false
+    private var Mod: Boolean  = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableEdgeToEdge()
 
-        Solution = findViewById(R.id.Solution)
-        Result = findViewById(R.id.Result)
+        Solution_txt = findViewById(R.id.Solution)
+        Result_txt = findViewById(R.id.Result)
 
         // Connect number buttons
         val button0: Button = findViewById(R.id.Btn_0)
@@ -42,31 +47,49 @@ class MainActivity : AppCompatActivity() {
         val buttonMod: Button = findViewById(R.id.Btn_Mod)
 
         val buttonEq: Button = findViewById(R.id.Btn_Eq)
+        val buttonAC: Button = findViewById(R.id.Btn_AC)
+        val buttonC: Button = findViewById(R.id.Btn_C)
 
 
-        button0.setOnClickListener { appendNumber("0") }
-        button1.setOnClickListener { appendNumber("1") }
-        button2.setOnClickListener { appendNumber("2") }
-        button3.setOnClickListener { appendNumber("3") }
-        button4.setOnClickListener { appendNumber("4") }
-        button5.setOnClickListener { appendNumber("5") }
-        button6.setOnClickListener { appendNumber("6") }
-        button7.setOnClickListener { appendNumber("7") }
-        button8.setOnClickListener { appendNumber("8") }
-        button9.setOnClickListener { appendNumber("9") }
+        button0.setOnClickListener { appendNumber(0.0) }
+        button1.setOnClickListener { appendNumber(1.0) }
+        button2.setOnClickListener { appendNumber(2.0) }
+        button3.setOnClickListener { appendNumber(3.0) }
+        button4.setOnClickListener { appendNumber(4.0) }
+        button5.setOnClickListener { appendNumber(5.0) }
+        button6.setOnClickListener { appendNumber(6.0) }
+        button7.setOnClickListener { appendNumber(7.0) }
+        button8.setOnClickListener { appendNumber(8.0) }
+        button9.setOnClickListener { appendNumber(9.0) }
 
-        buttonAdd.setOnClickListener {  }
-        buttonSub.setOnClickListener {  }
-        buttonMul.setOnClickListener {  }
-        buttonDiv.setOnClickListener {  }
-        buttonMod.setOnClickListener {  }
+        buttonAdd.setOnClickListener { Add = true }
+        buttonSub.setOnClickListener { Sub = true }
+        buttonMul.setOnClickListener { Mul = true }
+        buttonDiv.setOnClickListener { Div = true }
+        buttonMod.setOnClickListener { Mod = true }
+
+        buttonEq.setOnClickListener {  }
+        buttonAC.setOnClickListener {  }
+        buttonC.setOnClickListener {  }
 
 
     }
 
-    private fun appendNumber(number: String) {
-        currentInput += number
-        Solution.text = currentInput
+    private fun appendNumber(n: Double) {
+        Solution += n.toString()
+        Solution_txt.text = Solution
+
+        if (Add == true) Result += n
+        if (Sub == true) Result -= n
+        if (Mul == true) Result *= n
+        if (Div == true) Result /= n
+        if (Mod == true) Result %= n
+
+        Result_txt.text = Result.toString()
+    }
+
+    private fun Add_fn() {
+        Add = true
     }
 
 
