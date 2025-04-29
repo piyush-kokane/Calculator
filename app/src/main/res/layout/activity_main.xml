@@ -10,11 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout_Display"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -66,17 +65,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
         android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_Display"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_2" >
 
             <Button
                 android:id="@+id/Btn_AC"
@@ -113,8 +115,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_1"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_3" >
 
             <Button
                 android:id="@+id/Btn_7"
@@ -151,8 +156,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_2"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_4" >
 
             <Button
                 android:id="@+id/Btn_4"
@@ -189,8 +197,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_3"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_5" >
 
             <Button
                 android:id="@+id/Btn_1"
@@ -227,8 +238,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_4"
+            app:layout_constraintBottom_toBottomOf="parent" >
 
             <Button
                 android:id="@+id/Btn_Dot"
@@ -264,6 +278,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
