@@ -1,23 +1,24 @@
 package com.application.calculator
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var menuBtn: Button
+    private lateinit var menuPanel: View
 
     private lateinit var Solution_txt: TextView
     private lateinit var Result_txt: TextView
     private var Solution: String = ""
-    private var Result: Double  = 0.0
+    private var Result: Double = 0.0
+    private var currentInput: String = ""
 
-    private var Add: Boolean  = false
-    private var Sub: Boolean  = false
-    private var Mul: Boolean  = false
-    private var Div: Boolean  = false
-    private var Mod: Boolean  = false
+    private var operator: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,72 +28,84 @@ class MainActivity : AppCompatActivity() {
         Solution_txt = findViewById(R.id.Solution)
         Result_txt = findViewById(R.id.Result)
 
-        // Connect number buttons
-        val button0: Button = findViewById(R.id.Btn_0)
-        val button1: Button = findViewById(R.id.Btn_1)
-        val button2: Button = findViewById(R.id.Btn_2)
-        val button3: Button = findViewById(R.id.Btn_3)
-        val button4: Button = findViewById(R.id.Btn_4)
-        val button5: Button = findViewById(R.id.Btn_5)
-        val button6: Button = findViewById(R.id.Btn_6)
-        val button7: Button = findViewById(R.id.Btn_7)
-        val button8: Button = findViewById(R.id.Btn_8)
-        val button9: Button = findViewById(R.id.Btn_9)
+        menuBtn = findViewById(R.id.Btn_Menu)
+        menuPanel = findViewById(R.id.menu_panel)
 
-        // Connect operator buttons
-        val buttonAdd: Button = findViewById(R.id.Btn_Add)
-        val buttonSub: Button = findViewById(R.id.Btn_Sub)
-        val buttonMul: Button = findViewById(R.id.Btn_Mul)
-        val buttonDiv: Button = findViewById(R.id.Btn_Div)
-        val buttonMod: Button = findViewById(R.id.Btn_Mod)
+        menuBtn.setOnClickListener {
+            menuPanel.visibility = if (menuPanel.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+        }
 
-        val buttonEq: Button = findViewById(R.id.Btn_Eq)
-        val buttonAC: Button = findViewById(R.id.Btn_AC)
-        val buttonC: Button = findViewById(R.id.Btn_C)
+        val numberButtons = listOf(
+            R.id.Btn_0 to 0.0, R.id.Btn_1 to 1.0, R.id.Btn_2 to 2.0, R.id.Btn_3 to 3.0,
+            R.id.Btn_4 to 4.0, R.id.Btn_5 to 5.0, R.id.Btn_6 to 6.0, R.id.Btn_7 to 7.0,
+            R.id.Btn_8 to 8.0, R.id.Btn_9 to 9.0
+        )
 
+        numberButtons.forEach { (id, value) ->
+            findViewById<Button>(id).setOnClickListener {
+                appendNumber(value)
+            }
+        }
 
-        button0.setOnClickListener { appendNumber(0.0) }
-        button1.setOnClickListener { appendNumber(1.0) }
-        button2.setOnClickListener { appendNumber(2.0) }
-        button3.setOnClickListener { appendNumber(3.0) }
-        button4.setOnClickListener { appendNumber(4.0) }
-        button5.setOnClickListener { appendNumber(5.0) }
-        button6.setOnClickListener { appendNumber(6.0) }
-        button7.setOnClickListener { appendNumber(7.0) }
-        button8.setOnClickListener { appendNumber(8.0) }
-        button9.setOnClickListener { appendNumber(9.0) }
+        findViewById<Button>(R.id.Btn_Add).setOnClickListener { setOperator("+") }
+        findViewById<Button>(R.id.Btn_Sub).setOnClickListener { setOperator("-") }
+        findViewById<Button>(R.id.Btn_Mul).setOnClickListener { setOperator("*") }
+        findViewById<Button>(R.id.Btn_Div).setOnClickListener { setOperator("/") }
+        findViewById<Button>(R.id.Btn_Mod).setOnClickListener { setOperator("%") }
 
-        buttonAdd.setOnClickListener { Add = true }
-        buttonSub.setOnClickListener { Sub = true }
-        buttonMul.setOnClickListener { Mul = true }
-        buttonDiv.setOnClickListener { Div = true }
-        buttonMod.setOnClickListener { Mod = true }
-
-        buttonEq.setOnClickListener {  }
-        buttonAC.setOnClickListener {  }
-        buttonC.setOnClickListener {  }
-
-
+        findViewById<Button>(R.id.Btn_Eq).setOnClickListener { calculateResult() }
+        findViewById<Button>(R.id.Btn_AC).setOnClickListener { clearAll() }
+        findViewById<Button>(R.id.Btn_C).setOnClickListener { clearLast() }
     }
 
     private fun appendNumber(n: Double) {
-        Solution += n.toString()
+        currentInput += n.toInt().toString()
+        Solution += n.toInt().toString()
         Solution_txt.text = Solution
-
-        if (Add == true) Result += n
-        if (Sub == true) Result -= n
-        if (Mul == true) Result *= n
-        if (Div == true) Result /= n
-        if (Mod == true) Result %= n
-
-        Result_txt.text = Result.toString()
     }
 
-    private fun Add_fn() {
-        Add = true
+    private fun setOperator(op: String) {
+        if (currentInput.isNotEmpty()) {
+            Result = currentInput.toDouble()
+            currentInput = ""
+        }
+        operator = op
+        Solution += " $op "
+        Solution_txt.text = Solution
     }
 
+    private fun calculateResult() {
+        if (operator != null && currentInput.isNotEmpty()) {
+            val number = currentInput.toDouble()
+            Result = when (operator) {
+                "+" -> Result + number
+                "-" -> Result - number
+                "*" -> Result * number
+                "/" -> Result / number
+                "%" -> Result % number
+                else -> Result
+            }
+            Result_txt.text = Result.toString()
+            currentInput = ""
+            Solution = Result.toString()
+            operator = null
+        }
+    }
 
+    private fun clearAll() {
+        Solution = ""
+        Result = 0.0
+        currentInput = ""
+        operator = null
+        Solution_txt.text = ""
+        Result_txt.text = "0"
+    }
 
-
+    private fun clearLast() {
+        if (currentInput.isNotEmpty()) {
+            currentInput = currentInput.dropLast(1)
+            Solution = Solution.dropLast(1)
+            Solution_txt.text = Solution
+        }
+    }
 }
