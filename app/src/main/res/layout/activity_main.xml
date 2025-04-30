@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/bg_rounded"
+        android:background="@drawable/bg_half_rounded"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -54,7 +54,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-
         <TextView
             android:id="@+id/Solution"
             android:layout_width="0dp"
@@ -74,6 +73,102 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_rounded"
+        app:cornerRadius="100dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:elevation="2dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible" >
+
+        <Button
+            android:id="@+id/Mnu_Btn_History"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:padding="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:singleLine="true"
+            android:text="History"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textAlignment="textStart"
+            app:cornerRadius="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:alpha="0.1" />
+
+        <Button
+            android:id="@+id/Mnu_Btn_Sci"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scientific calcy"
+            android:textSize="22sp"
+            app:cornerRadius="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#00000000"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textAlignment="textStart"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:alpha="0.1" />
+
+        <Button
+            android:id="@+id/Mnu_Btn_Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose theme"
+            android:textSize="22sp"
+            app:cornerRadius="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#00000000"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textAlignment="textStart"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:alpha="0.1" />
+
+        <Button
+            android:id="@+id/Mnu_Btn_About"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="22sp"
+            app:cornerRadius="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#00000000"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textAlignment="textStart"
+            android:padding="5dp" />
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"

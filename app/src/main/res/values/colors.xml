@@ -2,9 +2,10 @@
 <resources>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="grey">#E1E1E1</color>
+    <color name="grey">#E1E1E6</color>
     <color name="lightGrey">#EBEBEB</color>
     <color name="darkGrey">#505050</color>
+    <color name="Menue">#DCDCDC</color>
     <color name="purple">#DCDCFF</color>
     <color name="red">#FFB4B4</color>
 </resources>
