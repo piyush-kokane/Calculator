@@ -206,6 +206,14 @@
                 android:padding="0dp"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_AC"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Factorial" />
+
+            <Button
+                android:id="@+id/Btn_Factorial"
+                style="@style/Button_2"
+                android:text="!"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Brac"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Mod" />
 
             <Button
@@ -213,7 +221,7 @@
                 style="@style/Button_2"
                 android:text="%"
                 tools:ignore="MissingConstraints"
-                app:layout_constraintStart_toEndOf="@+id/Btn_Brac"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Factorial"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Div" />
 
             <Button
@@ -232,6 +240,104 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@+id/Btn_Row_1"
             app:layout_constraintBottom_toTopOf="@+id/Btn_Row_3" >
+
+            <Button
+                android:id="@+id/Btn_Sin"
+                style="@style/Button_2"
+                android:text="sin"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Cos" />
+
+            <Button
+                android:id="@+id/Btn_Cos"
+                style="@style/Button_2"
+                android:text="cos"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Sin"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Tan" />
+
+            <Button
+                android:id="@+id/Btn_Tan"
+                style="@style/Button_2"
+                android:text="tan"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Cos"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Rad" />
+
+            <Button
+                android:id="@+id/Btn_Rad"
+                style="@style/Button_2"
+                android:text="RAD"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Tan"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Inv" />
+
+            <Button
+                android:id="@+id/Btn_Inv"
+                style="@style/Button_2"
+                android:text="INV"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Rad"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_2"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_4" >
+
+            <Button
+                android:id="@+id/Btn_NA1"
+                style="@style/Button_2"
+                android:text="NA"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_NA2" />
+
+            <Button
+                android:id="@+id/Btn_NA2"
+                style="@style/Button_2"
+                android:text="NA"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_NA1"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_In" />
+
+            <Button
+                android:id="@+id/Btn_In"
+                style="@style/Button_2"
+                android:text="In"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_NA2"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_E" />
+
+            <Button
+                android:id="@+id/Btn_E"
+                style="@style/Button_2"
+                android:text="e"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_In"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Log" />
+
+            <Button
+                android:id="@+id/Btn_Log"
+                style="@style/Button_2"
+                android:text="log"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_E"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Btn_Row_4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_3"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_5" >
 
             <Button
                 android:id="@+id/Btn_7"
@@ -255,6 +361,14 @@
                 android:text="9"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_8"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Square" />
+
+            <Button
+                android:id="@+id/Btn_Square"
+                style="@style/Button_2"
+                android:text="^"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_9"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Mul" />
 
             <Button
@@ -262,17 +376,17 @@
                 style="@style/Button_2"
                 android:text="X"
                 tools:ignore="MissingConstraints"
-                app:layout_constraintStart_toEndOf="@+id/Btn_9"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Square"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/Btn_Row_3"
+            android:id="@+id/Btn_Row_5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_2"
-            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_4" >
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_4"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_6" >
 
             <Button
                 android:id="@+id/Btn_4"
@@ -296,6 +410,14 @@
                 android:text="6"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_5"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Root" />
+
+            <Button
+                android:id="@+id/Btn_Root"
+                style="@style/Button_2"
+                android:text="√"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_6"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Sub" />
 
             <Button
@@ -303,17 +425,17 @@
                 style="@style/Button_2"
                 android:text="-"
                 tools:ignore="MissingConstraints"
-                app:layout_constraintStart_toEndOf="@+id/Btn_6"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Root"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/Btn_Row_4"
+            android:id="@+id/Btn_Row_6"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_3"
-            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_5" >
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_5"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_Row_7" >
 
             <Button
                 android:id="@+id/Btn_1"
@@ -337,6 +459,14 @@
                 android:text="3"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_2"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Pi" />
+
+            <Button
+                android:id="@+id/Btn_Pi"
+                style="@style/Button_2"
+                android:text="π"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toEndOf="@+id/Btn_3"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Add" />
 
             <Button
@@ -344,16 +474,16 @@
                 style="@style/Button_2"
                 android:text="+"
                 tools:ignore="MissingConstraints"
-                app:layout_constraintStart_toEndOf="@+id/Btn_3"
+                app:layout_constraintStart_toEndOf="@+id/Btn_Pi"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/Btn_Row_5"
+            android:id="@+id/Btn_Row_7"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_4"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_Row_6"
             app:layout_constraintBottom_toBottomOf="parent" >
 
             <Button
@@ -382,7 +512,7 @@
 
             <Button
                 android:id="@+id/Btn_C"
-                style="@style/Button_1"
+                style="@style/Button_3"
                 android:text="C"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_XY"
