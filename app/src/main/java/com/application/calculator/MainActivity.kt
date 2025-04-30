@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         Result_txt = findViewById(R.id.Result)
 
         menuBtn = findViewById(R.id.Btn_Menu)
-        menuPanel = findViewById(R.id.menu_panel)
+        menuPanel = findViewById(R.id.Menu_Panel)
 
         menuBtn.setOnClickListener {
             menuPanel.visibility = if (menuPanel.visibility == View.VISIBLE) View.GONE else View.VISIBLE
