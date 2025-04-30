@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Button">
-        <!-- Button size & scaling -->
+        <!-- Button size -->
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="layout_constraintWidth_max">150dp</item>
         <item name="layout_constraintHeight_max">150dp</item>
         <item name="layout_constraintDimensionRatio">1:1</item>
+        <item name="android:layout_margin">5dp</item>
 
         <!-- Button common constraints -->
         <item name="layout_constraintTop_toTopOf">parent</item>
@@ -21,11 +22,9 @@
         <item name="autoSizeMaxTextSize">52sp</item>
         <item name="autoSizeStepGranularity">2sp</item>
 
-        <!-- Gap between buttons  -->
-        <item name="android:insetTop">5dp</item>
-        <item name="android:insetBottom">5dp</item>
-        <item name="android:insetLeft">5dp</item>
-        <item name="android:insetRight">5dp</item>
+        <!-- Override default inset -->
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
 
         <!-- Button corner radius -->
         <item name="cornerRadius">100dp</item>

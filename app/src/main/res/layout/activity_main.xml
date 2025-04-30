@@ -270,14 +270,22 @@
                 android:text="0"
                 tools:ignore="MissingConstraints"
                 app:layout_constraintStart_toEndOf="@+id/Btn_Dot"
-                app:layout_constraintEnd_toStartOf="@+id/Btn_C" />
+                app:layout_constraintEnd_toStartOf="@+id/Btn_XY" />
+
+            <Button
+                android:id="@+id/Btn_XY"
+                style="@style/Button_1"
+                android:text="ㄨ"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_C"
+                app:layout_constraintStart_toEndOf="@+id/Btn_0"
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/Btn_C"
                 style="@style/Button_1"
                 android:text="C"
                 tools:ignore="MissingConstraints"
-                app:layout_constraintStart_toEndOf="@+id/Btn_0"
+                app:layout_constraintStart_toEndOf="@+id/Btn_XY"
                 app:layout_constraintEnd_toStartOf="@+id/Btn_Eq" />
 
             <Button
