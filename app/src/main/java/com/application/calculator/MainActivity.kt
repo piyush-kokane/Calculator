@@ -10,7 +10,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var menuBtn: Button
+    private lateinit var menuBtn: TextView
     private lateinit var menuPanel: View
 
     private lateinit var Solution_txt: TextView
